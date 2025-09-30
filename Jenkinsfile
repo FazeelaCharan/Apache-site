@@ -31,7 +31,7 @@ pipeline {
           echo "Deploying to $TARGET"
          
           rsync -av --delete --exclude='.git' ./ "$TARGET/"
-          sudo systemctl reload apache2
+          
         '''
       }
     }
