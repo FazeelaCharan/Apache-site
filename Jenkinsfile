@@ -29,7 +29,7 @@ pipeline {
         sh '''
           set -e
           echo "Deploying to $TARGET"
-          mkdir -p "$TARGET"
+         
           rsync -av --delete --exclude='.git' ./ "$TARGET/"
           sudo systemctl reload apache2
         '''
